@@ -1,6 +1,5 @@
 
 #include "ThingSpeak.h"
-#include "secrets.h"
 #include <DHT.h>
 #include <ESP8266WiFi.h>
 
@@ -9,9 +8,6 @@
 char ssid[] = SECRET_SSID;   // your network SSID (name) 
 char pass[] = SECRET_PASS;   // your network password
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
-
-//float humi;
-//float temp;
 
 WiFiClient  client;
 DHT dht(DHTPIN, DHT11);
@@ -71,5 +67,5 @@ void loop() {
   else{
     Serial.println("Problem reading channel. HTTP error code " + String(statusCode)); 
   }
-  delay(15000); // Wait 20 seconds to update the channel again
+  delay(15000); // Wait 15 seconds to update the channel again
 }
